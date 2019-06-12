@@ -19,6 +19,9 @@ public:
 
 	int doc_number(string c);
 
+	int doc_quantity();
+
+
 
 private:
 	map<string, set<string>> indice;
@@ -29,4 +32,6 @@ private:
 
 
 #endif
+
+
 
