@@ -5,7 +5,7 @@ using namespace std;
 void File_reader::Ler() {
 	ifstream doc;
 	for (int i = 1; 1; i++) {
-
+		doc_counter = i;
 		doc.open("d" + to_string(i) + ".txt");
 		if (!doc.is_open() && i == 1) {
 			cout << "Falha na leitura" << endl;
@@ -34,9 +34,6 @@ void File_reader::Ler() {
 		}
 		doc.close();
 	}
-
-
-	
 };
 
 void File_reader::Imprimir() {
@@ -57,11 +54,13 @@ int File_reader::doc_number(string c) {
 	int count = 0;
 	map<string, set<string>> aux;
 	aux = indice;
-	map<string, set<string>>::iterator itr;
-	count = indice[c].size();
-		return count;
+	count = aux[c].size();
+	return count;
 	}
 
 
 
+int File_reader::doc_quantity() {
+	return doc_counter;
+}
 
