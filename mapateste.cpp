@@ -3,6 +3,8 @@
 #include <set>
 #include <cmath>
 #include "mapa.h"
+#include "Indice_Invertido.h"
+#include "doctest.h"
 using namespace std;
 
 class Teste {
@@ -21,6 +23,7 @@ public:
   }
   static set<string> docs_(const dicionario& d) {
     return  d.docs;
+  }
   static int doc_counter_ (const File_reader& c) {
     return  c.doc_counter;
   }
@@ -56,7 +59,7 @@ TEST_SUITE("File_reader") {
     CHECK(Teste::doc_counter_(f)== 2);
   }
   TEST_CASE("int ocorrencias(string palavra, string documento))"){
-    File_reader f
+    File_reader f;
     f.Ler();
     CHECK(f.ocorrencias("carlos", "d1.txt") == 1);
     CHECK(f.ocorrencias("carlos", "d2.txt") == 0);
@@ -67,6 +70,13 @@ TEST_SUITE("File_reader") {
 
   }
 
+   TEST_CASE("void Imprimir()"){
+   File_reader f;
+   f.Ler();
+   f.Imprimir();
+   CHECK(f->itr->first=="gororoba");
+   CHECK(F->itr->second=="d1.txt");
+    }
 }
 
 
