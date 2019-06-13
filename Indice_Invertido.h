@@ -31,6 +31,7 @@ public:
 private:
 	map<string, set<string>> indice;
 	int doc_counter=0;
+	friend class Teste;
 	
 };
 
