@@ -1,4 +1,12 @@
-#include "Indice_Invertido.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include <cctype>
+#include <set>
+#include <algorithm>
+#include "dicionario.h"
+#include "Indice_Invetido.h"
 
 using namespace std;
 
