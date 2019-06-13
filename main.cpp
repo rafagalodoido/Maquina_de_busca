@@ -6,6 +6,7 @@
 #include <set>
 #include <algorithm>
 #include "dicionario.h"
+#include "Indice_Invetido.h"
 
 using namespace std;
 
