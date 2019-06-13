@@ -38,5 +38,6 @@ private:
 	map<string, set<string>> m;
 	// recebe o valor da busca
 	map<string, vector<double>> mapa_busca;
+	friend class Teste;
 };
 #endif // MAPA_H_INCLUDED
