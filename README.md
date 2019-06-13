@@ -6,7 +6,7 @@ Documentação
 //Função: File_reader::Ler()
 //
 
-//Fução: File_reader::Imprimir()
+//Função: File_reader::Imprimir()
 //
 
 //File_reader::doc_number(string c)
