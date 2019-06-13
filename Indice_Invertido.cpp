@@ -5,7 +5,7 @@
 #include <cctype>
 #include <set>
 #include <algorithm>
-#include "dicionario.h"
+#include "mapa.h"
 #include "Indice_Invetido.h"
 
 using namespace std;
