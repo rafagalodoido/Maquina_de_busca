@@ -14,12 +14,15 @@ using std::string;
 class dicionario {
 public:
 	// é a importância de Pt na coleção.
-	double idf(File_reader c);
+	int idf(string palavra);
 	//é a frequência da palavra Pt no documento dj.
 	int tf(string palavra);
 	//é a coordenada do documento dj no eixo Pt
 	float w();
+
+	
 private:
+	File_reader indice_;
 	//número total de documentos.
 	int N;
 	//número de documentos que a palavra Pt ocorreu.
