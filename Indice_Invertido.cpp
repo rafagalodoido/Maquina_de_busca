@@ -43,7 +43,7 @@ void File_reader::Imprimir() {
 		cout << itr->first << "->";
 		for (auto e = itr->second.begin(); e != itr->second.end(); e++) {
 			
-			cout << *e <<"->"<< endl;
+			cout << *e <<"->";
 
 		}
 
@@ -58,41 +58,34 @@ bool File_reader::pertence(string palavra){
 	return(indice.find(palavra) != indice.end());
 }
 
-int File_reader::doc_number(string c) {
-	int count = 0;
+size_t File_reader::doc_number(string c) {
+	size_t count = 0;
 	map<string, set<string>> aux;
 	aux = indice;
 	count = aux[c].size();
 	return count;
 	}
 
-int ocorrencias(string palavra_nova, string documento) {
-	int conta=0;
+int File_reader::ocorrencias(string palavra_nova, string documento) {
+	int conta = 0;
 	ifstream doc;
-	for (int i = 1; 1; i++) {
 
-		doc.open(documento);
-		if (!doc.is_open() && i == 1) {
-			cout << "Falha na leitura" << endl;
-			break;
-		}
-		if (!doc.is_open()) {
-			break;
-		}
-		
-		string palavra;
-		while (!doc.eof()) {
-			doc >> palavra;
-			transform(palavra.begin(), palavra.end(), palavra.begin(), ::tolower);
-			palavra.erase(remove_if(palavra.begin(), palavra.end(), [](char c) {return !isalpha(c) && !isdigit(c); }), palavra.end());
-			if (palavra == palavra_nova) {
-				conta++;
-			}
-		}
-		doc.close();
+	doc.open("documento");
+	if (!doc.is_open()) {
+		cout << "Falha na leitura" << endl;
 	}
-	return conta;
 
+	string palavra;
+	while (!doc.eof()) {
+		doc >> palavra;
+		transform(palavra.begin(), palavra.end(), palavra.begin(), ::tolower);//trasnforma pra minuscula
+		palavra.erase(remove_if(palavra.begin(), palavra.end(), [](char c) {return !isalpha(c) && !isdigit(c); }), palavra.end());// Retirar nao alfanumericos e digitos
+		if (palavra == palavra_nova) {
+			conta++;
+		}
+	}
+	doc.close();
+	return conta;
 }
 
 
