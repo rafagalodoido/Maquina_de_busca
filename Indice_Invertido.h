@@ -21,7 +21,11 @@ public:
 
 	int doc_quantity();
 
+	bool pertence(string palavra);
 
+	map<string, set<string>> mapa();
+
+	int ocorrencias(string palavra, string documento);
 
 private:
 	map<string, set<string>> indice;
@@ -32,6 +36,4 @@ private:
 
 
 #endif
-
-
 
