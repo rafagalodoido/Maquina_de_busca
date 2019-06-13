@@ -1,4 +1,4 @@
-#include "dicionario.h"
+#include "mapa.h"
 using std::string;
 
 double dicionario::idf(string palavra) {
