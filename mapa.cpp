@@ -55,7 +55,7 @@ double dicionario::w(string palavra) {
 	return w_;
 }
 
-double dicionario::cosine_ranking() {
+void dicionario::cosine_ranking() {
 	dicionario d;
 	string aux;
 	vector<double> pesq_;
