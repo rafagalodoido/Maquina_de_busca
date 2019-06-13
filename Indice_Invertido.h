@@ -7,6 +7,7 @@
 #include <cctype>
 #include <set>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 using std::string;
@@ -14,10 +15,9 @@ class File_reader {
 public:
 	void  Ler();
 
-
 	void Imprimir();
 
-	int doc_number(string c);
+	size_t doc_number(string c);
 
 	int doc_quantity();
 
@@ -26,10 +26,12 @@ public:
 	map<string, set<string>> mapa();
 
 	int ocorrencias(string palavra, string documento);
+	
 
 private:
 	map<string, set<string>> indice;
-	int doc_counter;
+	int doc_counter=0;
+	
 };
 
 
