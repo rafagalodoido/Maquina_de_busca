@@ -2,7 +2,7 @@
 #include <map>
 #include <set>
 #include <cmath>
-#include "mapa.h"
+#include "dicionario.h"
 #include "Indice_Invertido.h"
 #include "doctest.h"
 using namespace std;
@@ -69,16 +69,7 @@ TEST_SUITE("File_reader") {
     CHECK(f.ocorrencias("jesus", "d2.txt") == 0);
 
   }
-
-   TEST_CASE("void Imprimir()"){
-   File_reader f;
-   f.Ler();
-   f.Imprimir();
-   CHECK(f->itr->first=="gororoba");
-   CHECK(F->itr->second=="d1.txt");
-    }
 }
-
 
 
 TEST_SUITE("dicionario") {
