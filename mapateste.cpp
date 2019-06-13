@@ -27,7 +27,7 @@ public:
   static int doc_counter_ (const File_reader& c) {
     return  c.doc_counter;
   }
-};
+}
 TEST_SUITE("File_reader") {
   TEST_CASE("void Ler()") {
     File_reader f;
@@ -106,7 +106,14 @@ TEST_SUITE("dicionario") {
     CHECK(d.w("jesus")==0);
     d.w("jonatas");
     CHECK(d.idf("jonatas")==0);
-    CHECK(d.tf("jesus")==1);
-    CHECK(d.w("jesus")==0);
+    CHECK(d.tf("jonatas")==1);
+    CHECK(d.w("jonatas")==0);
     }
+    
+  TEST_CASE("double sim(string palavra)"){
+    dicionario d;
+    CHECK(d.sim("jonatas")==0 );
+    CHECK(d.tf("carlos")==1);
+    CHECK(d.w("jesus")==0);
+  }
   }
