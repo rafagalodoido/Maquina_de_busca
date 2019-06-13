@@ -2,7 +2,7 @@
 #include <map>
 #include <set>
 #include <cmath>
-#include "dicionario.h"
+#include "mapa.h"
 #include "Indice_Invertido.h"
 #include "doctest.h"
 using namespace std;
