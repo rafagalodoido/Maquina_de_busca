@@ -5,7 +5,7 @@
 #include <cctype>
 #include <set>
 #include <algorithm>
-#include "mapa.h"
+#include "dicionario.h"
 
 using namespace std;
 
