@@ -1,4 +1,5 @@
 #include "mapa.h"
+#include "Indice_Invertido.h"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -93,17 +94,5 @@ double dicionario::sim(string palavra) {
 	return (d.w(palavra) * d.w(palavra)) / sqrt((d.w(palavra) * d.w(palavra)) * (d.w(palavra) * d.w(palavra)));
 
 }
-		N = indice_.doc_quantity();
-		nt = indice_.doc_number(palavra);
-		freq = N / nt;
-		idf_ = log2(freq);
-		aux.insert(pair<string, double>(palavra, idf_));
-	}
-
-	if (nt == 0) {
-		idf_ = 0;
-		cout << "palavra não encontrada." << endl;
-	}
-	return aux[palavra];
-}
+		
 
