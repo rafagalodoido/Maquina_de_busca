@@ -21,7 +21,7 @@ public:
 	//é a coordenada do documento dj no eixo Pt
 	double w(string palavra);
 	//Preenche o vetor q
-	double cosine_ranking();
+	void cosine_ranking();
 	//retorna o map mapa_busca
 	map<string, vector<double>> map_return();
 	//Realiza o cálculo de sim para todos os documentos
@@ -40,6 +40,5 @@ private:
 	map<string, set<string>> m;
 	// recebe o valor da busca
 	map<string, vector<double>> mapa_busca;
-	friend class Teste;
 };
 #endif // MAPA_H_INCLUDED
