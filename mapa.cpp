@@ -7,26 +7,28 @@
 #include <cctype>
 #include <set>
 #include <algorithm>
+#include "mapa.h"
 using namespace std;
 
 double dicionario::idf(string palavra) {
-	indice_.Ler();
-	double freq;
-	double idf_;
-	map<string, set<string>>::iterator itr;
-	map<string,double> aux;
-	for (itr = indice_.mapa().begin(); itr != indice_.mapa().end(); itr++) {
-		palavra = itr->first;
-		N = indice_.doc_quantity();
-		nt = indice_.doc_number(palavra);
-		freq = N / nt;
-		idf_ = log2(freq);
-		aux.insert(pair<string, double>(palavra, idf_));
-	}
 
+	double freq = 0;
+	double idf_ = 0;
+	map<string, set<string>>::iterator itr;
+	map<string, double> aux;
 	if (nt == 0) {
 		idf_ = 0;
-		cout << "palavra não encontrada." << endl;
+		cout << "palavra nao encontrada." << endl;
+	}
+	else {
+		for (itr = indice_.mapa().begin(); itr != indice_.mapa().end(); itr++) {
+			palavra = itr->first;
+			N = indice_.doc_quantity();
+			nt = indice_.doc_number(palavra);
+			freq = N / nt;
+			idf_ = log2(freq);
+			aux.insert(pair<string, double>(palavra, idf_));
+		}
 	}
 	return aux[palavra];
 }
@@ -94,5 +96,3 @@ double dicionario::sim(string palavra) {
 	return (d.w(palavra) * d.w(palavra)) / sqrt((d.w(palavra) * d.w(palavra)) * (d.w(palavra) * d.w(palavra)));
 
 }
-		
-
