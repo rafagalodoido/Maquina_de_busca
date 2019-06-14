@@ -45,13 +45,12 @@ void File_reader::Ler() {
 };
 
 void File_reader::Imprimir() {
-	
 	map<string, set<string>>::iterator itr;
 	for (itr = indice.begin(); itr != indice.end(); itr++) {
 		cout << itr->first << "->";
 		for (auto e = itr->second.begin(); e != itr->second.end(); e++) {
 			
-			cout << *e <<"->";
+			cout << *e <<"->"<<itr->second.size()<<endl;
 
 		}
 
@@ -66,13 +65,20 @@ bool File_reader::pertence(string palavra){
 	return(indice.find(palavra) != indice.end());
 }
 
-size_t File_reader::doc_number(string c) {
+size_t File_reader::doc_number(string palavra) {
+	map<string, set<string>>::iterator itr;
 	size_t count = 0;
-	map<string, set<string>> aux;
-	aux = indice;
-	count = aux[c].size();
-	return count;
+	for (itr = indice.begin(); itr != indice.end(); itr++) {
+		for (auto e = itr->second.begin(); e != itr->second.end(); e++) {
+			doc_num.insert(pair<string, size_t>(itr->first, itr->second.size()));
+			if (palavra == itr->first);
+			size_t count = doc_num[itr->first];
+		}
+
 	}
+		return count;
+};
+	
 
 int File_reader::ocorrencias(string palavra_nova, string documento) {
 	int conta = 0;
@@ -101,4 +107,3 @@ int File_reader::ocorrencias(string palavra_nova, string documento) {
 int File_reader::doc_quantity() {
 	return doc_counter;
 }
-
