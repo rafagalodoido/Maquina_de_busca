@@ -9,7 +9,7 @@
 #include <algorithm>
 #include "mapa.h"
 using namespace std;
-
+      
 double dicionario::idf(string palavra) {
 
 	double freq = 0;
