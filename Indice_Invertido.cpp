@@ -43,7 +43,7 @@ void File_reader::Ler() {
 		doc.close();
 	}
 };
-
+ 
 void File_reader::Imprimir() {
 	map<string, set<string>>::iterator itr;
 	for (itr = indice.begin(); itr != indice.end(); itr++) {
