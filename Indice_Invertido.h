@@ -18,7 +18,7 @@ public:
 	//Função para imprimir os documentos da coleção.
 	void Imprimir();
 	//Retorna o tamanho do set da string.
-	size_t doc_number(string c);
+	double doc_number(string c);
 	//Retorna o número de documentos da coleção. 
 	int doc_quantity();
 	//Retorna se a palavra existe até o end do map.
