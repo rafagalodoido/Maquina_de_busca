@@ -65,18 +65,21 @@ bool File_reader::pertence(string palavra){
 	return(indice.find(palavra) != indice.end());
 }
 
-size_t File_reader::doc_number(string palavra) {
+double File_reader::doc_number(string palavra) {
 	map<string, set<string>>::iterator itr;
-	size_t count = 0;
+
 	for (itr = indice.begin(); itr != indice.end(); itr++) {
 		for (auto e = itr->second.begin(); e != itr->second.end(); e++) {
 			doc_num.insert(pair<string, size_t>(itr->first, itr->second.size()));
-			if (palavra == itr->first);
-			size_t count = doc_num[itr->first];
+			if (palavra == itr->first) {
+				size_t count = doc_num[itr->first];
+				static_cast<double>(count);
+				return count;
+			}
 		}
-
+		
 	}
-		return count;
+		
 };
 	
 
