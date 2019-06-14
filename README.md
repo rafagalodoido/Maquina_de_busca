@@ -13,7 +13,22 @@ Documentação
 //
 
 //File_reader::doc_quantity()
-//
+////                        
+                                             
+                                                         .
+                                                                                     .
+                                                                                     
+                                                                                     
+                                                                                     
+                                                                                     
+                                                                                     
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                                                                                            .
 
 
 
